@@ -13,8 +13,9 @@ after_success:
   - docker build -t pbegle/multi-nginx ./nginx
   - docker build -t pbegle/multi-server ./server
   - docker build -t pbegle/multi-worker ./worker
-  # - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker login -u pbegle -p $DOCKER_PASSWORD
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_TEST"
+  # - docker login -u pbegle -p $DOCKER_PASSWORD
   - docker push pbegle/multi-client
   - docker push pbegle/multi-nginx
   - docker push pbegle/multi-server
