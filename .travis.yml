@@ -13,7 +13,7 @@ after_success:
   - docker build -t pbegle/multi-nginx ./nginx
   - docker build -t pbegle/multi-server ./server
   - docker build -t pbegle/multi-worker ./worker
-  - docker login -u $DOCKER_ID -p $DOCKER_PASSWORD
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
   - docker push pbegle/multi-client
   - docker push pbegle/multi-nginx
   - docker push pbegle/multi-server
